@@ -5,6 +5,12 @@ defmodule MonstersManual.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/", MonstersManual do
+    pipe_through :api
+    
+    get  "/", MonsterController, :index
+  end
+
   scope "/api", MonstersManual do
     pipe_through :api
 
