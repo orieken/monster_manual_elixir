@@ -35,3 +35,8 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Run unit tests:  ` mix test ` when i do this i get an error because of the shared db connection. have not figured out why so I split it into the next two commands
     * Run View and Model tests: ` mix test test/views test/models/ `
     * Run Integration Tests: ` mix test test/integration/ `
+    
+### Deployment
+
+* ClearDB only has 10 available connections so limit the app to 8 in: ` pool_size: String.to_integer(System.get_env("POOL_SIZE") || "8"), `
+* to run migrations on heroku ` heroku run "POOL_SIZE=1 MIX_ENV=prod  mix ecto.migrate" `
