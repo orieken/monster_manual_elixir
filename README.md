@@ -27,6 +27,11 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 ## Commands
 
   * Generate new api with mysql db ` mix phoenix.new monsters_manual --no-html --no-brunch --database mysql `
-  * Run Tests verbose ` mix test test/integration/listing_monsters_test.exs --color --trace `
   
  * Generate model ` mix phoenix.gen.model Monster monsters name size alignment ac:integer `
+ 
+### Testing
+
+  * Run unit tests:  ` mix test ` when i do this i get an error because of the shared db connection. have not figured out why so I split it into the next two commands
+    * Run View and Model tests: ` mix test test/views test/models/ `
+    * Run Integration Tests: ` mix test test/integration/ `
