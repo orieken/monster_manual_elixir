@@ -20,10 +20,8 @@ config :monsters_manual, MonstersManual.Endpoint,
 
 # Do not print debug messages in production
 config :logger, level: :info
-
-
 # Configure your database
-config :hello_phoenix, HelloPhoenix.Repo,
+config :monsters_manual, MonstersManual.Repo,
   adapter: Ecto.Adapters.MySQL,
   url: System.get_env("CLEARDB_DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
