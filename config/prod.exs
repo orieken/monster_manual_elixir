@@ -23,7 +23,7 @@ config :logger, level: :info
 config :monsters_manual, MonstersManual.Repo,
   adapter: Ecto.Adapters.MySQL,
   url: System.get_env("CLEARDB_DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "18"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "8"),
   ssl: true
 
 # ## SSL Support
