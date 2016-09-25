@@ -4,14 +4,7 @@ defmodule MonstersManual.Monster do
   schema "monsters" do
     field :name, :string
     field :type, :string
-    field :average_hit_points, :integer
-    field :hit_point_dice, :string
-    field :size, :string
-    field :alignment, :string
     field :ac, :integer
-    field :xp, :integer
-
-    #attributes
     field :str, :integer
     field :str_modifier, :string
     field :dex, :integer
@@ -25,26 +18,49 @@ defmodule MonstersManual.Monster do
     field :cha, :integer
     field :cha_modifier, :string
 
-#    hard stuff
-#    field actions map
+    has_one :speeds, MonstersManual.Speed
+    belongs_to :challenge, MonstersManual.Challenge
+#    has_one :actions, Action
+#    has_one :history
+
+#    field :challenge_id, :integer
+#    has_one :challenge, MonstersManual.Challenge
+#    has_one :size, Size
+#    has_one :alignment, Alignment
+#    has_one :size, Size
+#    mix phoenix.gen.model Size sizes size hit_point_dice space average_hit_point_per_die:integer
+#    has_one :challenge, Challenge
+#    mix phoenix.gen.model Challenge challenges rating:float experience:integer proficiency
+#    has_one alignment, Alignment
+#    mix phoenix.gen.model Alignment alignments
+#    has_many :actions, Action
+#    mix phoenix.gen.model Action actions name legendary_action reaction limited_usage multiattack ammunition legendary_lair_action regional_effect
+#    has_one :speed
+#    mix phoenix.gen.model Speed speeds walking burrow climb fly swim
+
+#    has_many :languages, Language
+#    mix phoenix.gen.model Language languages telepathy
+#    has_one :speed
+#    has_many :skills
 #    field skills map
+#    has_many :senses
 #    field senses map
+#    has_many :languages
 #    field languages map
+#    has_one :history
 #    field history => background of monster
-#    field challenge => this is actually a map of 0.25 => 50xp
+
 
     timestamps()
   end
 
+
+
 @all_attributes [
                     :name,
                     :type,
-                    :average_hit_points,
-                    :hit_point_dice,
-                    :size,
-                    :alignment,
                     :ac,
-                    :xp,
+
                     :str,
                     :str_modifier,
                     :dex,
@@ -72,7 +88,7 @@ defmodule MonstersManual.Monster do
     def encode(monster, _options) do
       monster
       |> Map.from_struct
-      |> Map.drop([:__meta__, :__struct__])
+      |> Map.drop([:__meta__, :__struct__, :challenge_id])
       |> Poison.encode!
     end
   end

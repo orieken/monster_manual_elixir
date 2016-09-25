@@ -7,7 +7,7 @@ defmodule MonstersManual.Router do
 
   scope "/", MonstersManual do
     pipe_through :api
-    
+
     get  "/", MonsterController, :index
   end
 

@@ -3,7 +3,8 @@ defmodule MonstersManual.MonsterController do
   alias MonstersManual.Monster
 
   def index(conn, _params) do
-    monsters = Repo.all(Monster)
-    render conn, monsters: monsters
+    monster = Repo.all(Monster)
+    |> Repo.preload([:speeds, :challenge])
+    render conn, monsters: monster
   end
 end

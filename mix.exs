@@ -36,7 +36,9 @@ defmodule MonstersManual.Mixfile do
      {:mariaex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:poison, "~> 2.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:faker, "~> 0.5", only: :test}
+     ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

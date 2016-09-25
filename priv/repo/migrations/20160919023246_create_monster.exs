@@ -5,12 +5,7 @@ defmodule MonstersManual.Repo.Migrations.CreateMonster do
     create table(:monsters) do
       add :name, :string
       add :type, :string
-      add :average_hit_points, :integer
-      add :hit_point_dice, :string
-      add :size, :string
-      add :alignment, :string
       add :ac, :integer
-      add :xp, :integer
 
           #attributes
       add :str, :integer
