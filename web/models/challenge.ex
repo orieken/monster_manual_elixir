@@ -19,8 +19,8 @@ defmodule MonstersManual.Challenge do
   end
 
   defimpl Poison.Encoder, for: MonstersManual.Challenge do
-    def encode(monster, _options) do
-      monster
+    def encode(challenge, _options) do
+      challenge
       |> Map.from_struct
       |> Map.drop([:__meta__, :__struct__, :monster, :monster_id])
       |> Poison.encode!

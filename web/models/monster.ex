@@ -19,7 +19,9 @@ defmodule MonstersManual.Monster do
     field :cha_modifier, :string
 
     has_one :speeds, MonstersManual.Speed
+
     belongs_to :challenge, MonstersManual.Challenge
+    belongs_to :alignment, MonstersManual.Alignment
 #    has_one :actions, Action
 #    has_one :history
 
@@ -88,7 +90,7 @@ defmodule MonstersManual.Monster do
     def encode(monster, _options) do
       monster
       |> Map.from_struct
-      |> Map.drop([:__meta__, :__struct__, :challenge_id])
+      |> Map.drop([:__meta__, :__struct__, :challenge_id, :alignment_id])
       |> Poison.encode!
     end
   end

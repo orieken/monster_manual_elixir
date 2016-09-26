@@ -15,4 +15,13 @@ defmodule MonstersManual.Alignment do
     |> cast(params, [:name])
     |> validate_required([:name])
   end
+
+  defimpl Poison.Encoder, for: MonstersManual.Alignment do
+    def encode(alignment, _options) do
+      alignment
+      |> Map.from_struct
+      |> Map.drop([:__meta__, :__struct__, :monster, :monster_id])
+      |> Poison.encode!
+    end
+  end
 end

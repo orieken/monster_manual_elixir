@@ -4,7 +4,7 @@ defmodule MonstersManual.MonsterController do
 
   def index(conn, _params) do
     monster = Repo.all(Monster)
-    |> Repo.preload([:speeds, :challenge])
+    |> Repo.preload([:speeds, :challenge, :alignment])
     render conn, monsters: monster
   end
 end

@@ -38,7 +38,7 @@ end
 #]
 
 monster = %Monster{name: "Aarakocra", type: "humanoid", ac: 12, str: 17,str_modifier: "+3",dex: 11,dex_modifier: "+0",con: 13,con_modifier: "+1",int: 1,int_modifier: "-5",wis: 13,wis_modifier: "+1",cha: 6,cha_modifier: "-2",
-        challenge_id: 3}
+        challenge_id: 3, alignment_id: 4}
 speed = %Speed{burrow: "some content", climb: "some content", fly: "some content", swim: "some content", walking: "some content"}
 
 
