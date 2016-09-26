@@ -37,13 +37,22 @@ end
 #%Monster{name: "Deva", type: "celestial", average_hit_points: 136, hit_point_dice: "16d8 + 64", size: "medium",alignment: 1, ac: 17, xp: 5900,str: 18,str_modifier: "+4",dex: 18,dex_modifier: "+4",con: 18,con_modifier: "+4",int: 17,int_modifier: "+3",wis: 20,wis_modifier: "+5",cha: 20,cha_modifier: "+5"}
 #]
 
+# size: 1,alignment: 4,challenge: 3,actions: 1, speeds: 1,
 monster = %Monster{name: "Aarakocra", type: "humanoid", ac: 12, str: 17,str_modifier: "+3",dex: 11,dex_modifier: "+0",con: 13,con_modifier: "+1",int: 1,int_modifier: "-5",wis: 13,wis_modifier: "+1",cha: 6,cha_modifier: "-2",
         challenge_id: 3, alignment_id: 4}
 speed = %Speed{burrow: "some content", climb: "some content", fly: "some content", swim: "some content", walking: "some content"}
 
+sizes = [
+%Size{average_hit_point_per_die: 13, hit_point_dice: "3d8", size: "medium", space: "5 by 5 ft."}
+]
 
-# size: 1,alignment: 4,challenge: 3,actions: 1, speeds: 1,
+actions = [
+%Action{ammunition: "some content", legendary_action: "some content", legendary_lair_action: "some content", limited_usage: "some content", multiattack: "some content", name: "some content", reaction: "some content", regional_effect: "some content"}
+]
 
+
+
+# Shared Items
 challenges = [
 %Challenge{rating: 0.0, experience: 10, proficiency: "+2"},
 %Challenge{rating: 0.125, experience: 25, proficiency: "+2"},
@@ -93,22 +102,13 @@ alignments = [
 %Alignment{name: "Chaotic Evil"}
 ]
 
-sizes = [
-%Size{average_hit_point_per_die: 13, hit_point_dice: "3d8", size: "medium", space: "5 by 5 ft."}
-]
 
-#speeds = [
-#%Speed{burrow: "some content", climb: "some content", fly: "some content", swim: "some content", walking: "some content", monster: 1}
-#]
-
-actions = [
-%Action{ammunition: "some content", legendary_action: "some content", legendary_lair_action: "some content", limited_usage: "some content", multiattack: "some content", name: "some content", reaction: "some content", regional_effect: "some content"}
-]
-
-#Seeder.load_data(monsters)
 Seeder.load_data(challenges)
 Seeder.load_data(alignments)
 Seeder.load_data(sizes)
 Seeder.load_data(actions)
+
+
+
+
 Seeder.load_monster_with_asoc(monster, speed)
-#Seeder.load_data(speeds)
