@@ -2,7 +2,7 @@
 
 Web service in elixir and phoenix for the d&d 5e monster manual I don't own any of the data it all came from the book. 
 
-[ ![Codeship Status for orieken/monster_manual_elixir](https://codeship.com/projects/85c445d0-60de-0134-ff4f-42a7766b52c3/status?branch=master)](https://codeship.com/projects/174674)
+[ ![Codeship Status for orieken/monster_manual_elixir](https://codeship.com/projects/85c445d0-60de-0134-ff4f-42a7766b52c3/status?branch=master)](https://codeship.com/projects/174674) Deployed here: 
 
 
 ## Phoenix 
